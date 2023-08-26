@@ -1,2 +1,2 @@
-# VUTTR-Challenger
+# VUTTR-Challenge
 Em construção...
