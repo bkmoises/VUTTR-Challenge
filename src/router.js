@@ -8,7 +8,7 @@ router.get('/tools', controller.getTools);
 // Cadastrar uma nova ferramenta
 router.post('/tools', controller.createTool);
 // Remover uma ferramenta por ID
-router.delete('/tools/:id');
+router.delete('/tools/:id', controller.deleteTool);
 
 
 module.exports = router;
