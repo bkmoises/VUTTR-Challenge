@@ -41,8 +41,20 @@ const deleteTool = async (req, res) => {
   };
 };
 
+const updateTool = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await toolsModels.updateTool(id, req.body);
+    return res.status(200).json({});
+  } catch (error) {
+    throw error;
+  };
+};
+
 module.exports = {
   getTools,
   createTool,
-  deleteTool
+  deleteTool,
+  updateTool
 };
