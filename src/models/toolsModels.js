@@ -5,8 +5,7 @@ const getAllTools = async () => {
   try {
     const [rows] = await sql.execute("SELECT * FROM tools");
     return rows;
-  }
-  catch (error) {
+  } catch (error) {
     throw error;
   };
 };
@@ -37,9 +36,21 @@ const createTool = async (tool) => {
   };
 };
 
+const deleteTool = async (id) => {
+  try {
+    const query = 'DELETE FROM tools WHERE id = ?';
+
+    await connection.execute(query, [id]);
+    return {};
+  } catch (erro) {
+    throw erro;
+  };
+}
+
 module.exports = {
   getAllTools,
   getToolByTag,
   createTool,
+  deleteTool
 }
 
