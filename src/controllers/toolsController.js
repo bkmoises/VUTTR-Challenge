@@ -20,6 +20,17 @@ const getTools = async (req, res) => {
   };
 };
 
+const createTool = async (req, res) => {
+  try {
+    const createdTool = await toolsModels.createTool(req.body);
+    return res.status(201).json(createdTool);
+  }
+  catch (error) {
+    return res.status(500).json({ message: 'Erro ao criar uma nova ferramenta.' });
+  };
+};
+
 module.exports = {
   getTools,
+  createTool
 };
