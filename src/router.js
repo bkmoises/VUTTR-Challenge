@@ -6,7 +6,7 @@ const controller = require('./controllers/toolsController');
 // Listar ferramentas 
 router.get('/tools', controller.getTools);
 // Cadastrar uma nova ferramenta
-router.post('/tools',);
+router.post('/tools', controller.createTool);
 // Remover uma ferramenta por ID
 router.delete('/tools/:id');
 
