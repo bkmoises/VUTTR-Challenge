@@ -42,8 +42,8 @@ const deleteTool = async (id) => {
 
     await connection.execute(query, [id]);
     return {};
-  } catch (erro) {
-    throw erro;
+  } catch (error) {
+    throw error;
   };
 }
 
