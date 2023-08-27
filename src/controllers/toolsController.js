@@ -30,7 +30,19 @@ const createTool = async (req, res) => {
   };
 };
 
+const deleteTool = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await toolsModels.deleteTool(id);
+    return res.status(200).json({});
+  } catch (error) {
+    return res.status(500).json({ message: 'Erro ao tentar deletar uma ferramenta.' });
+  };
+};
+
 module.exports = {
   getTools,
-  createTool
+  createTool,
+  deleteTool
 };
