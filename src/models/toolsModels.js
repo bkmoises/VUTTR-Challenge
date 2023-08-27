@@ -45,12 +45,26 @@ const deleteTool = async (id) => {
   } catch (error) {
     throw error;
   };
-}
+};
+
+const updateTool = async (id, tool) => {
+  try {
+    const { title, link, description, tags } = tool;
+    const query = "UPDATE tools SET title = ?, link = ?, description = ?, tags = ? WHERE id = ?";
+
+    await connection.execute(query, [title, link, description, tags, id]);
+
+    return {};
+  } catch (error) {
+    throw error;
+  };
+};
 
 module.exports = {
   getAllTools,
   getToolByTag,
   createTool,
-  deleteTool
+  deleteTool,
+  updateTool
 }
 
