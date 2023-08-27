@@ -10,6 +10,18 @@ const getAllTools = async () => {
   };
 };
 
+const getToolByTag = async (tag) => {
+  const query = 'SELECT * FROM tools WHERE JSON_CONTAINS(tags, ?)';
+
+  try {
+    const [rows] = await sql.execute(query, [JSON.stringify(tag)]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllTools,
+  getToolByTag,
 }
