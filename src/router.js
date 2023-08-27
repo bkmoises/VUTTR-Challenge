@@ -9,6 +9,8 @@ router.get('/tools', controller.getTools);
 router.post('/tools', controller.createTool);
 // Remover uma ferramenta por ID
 router.delete('/tools/:id', controller.deleteTool);
+// Alterar uma ferramenta por ID
+router.put('/tools/:id', controller.updateTool);
 
 
 module.exports = router;
