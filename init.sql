@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS vuttrDb;
+USE vuttrDb;
+CREATE TABLE tools (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(45) NOT NULL,
+    link VARCHAR(100) NOT NULL,
+    description VARCHAR(500) NOT NULL,
+    tags VARCHAR(1000) NOT NULL,
+    created_at VARCHAR(45) NOT NULL
+);
