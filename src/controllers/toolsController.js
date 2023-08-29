@@ -2,21 +2,22 @@ const toolsModels = require('../models/toolsModels');
 
 const getTools = async (req, res) => {
   try {
-    if (req.query.tag) {
-      const { tag } = req.query;
-      const tools = await toolsModels.getToolByTag(tag);
+    const { tag } = req.query;
 
-      if (!tools.length) {
-        return res.status(404).json({ message: 'Nenhuma ferramenta encontrada para a tag fornecida.' });
+    if (Object.keys(req.query).length) {
+      if ('tag' in req.query) {
+        const tools = await toolsModels.getToolByTag(tag);
+        return res.status(200).json(tools);
+      } else {
+        return res.status(500).json({ message: 'O parâmetro informado é invalido!' });
       };
-
-      return res.status(200).json(tools);
-    };
+    }
 
     const tools = await toolsModels.getAllTools();
     return res.status(200).json(tools);
-  } catch (error) {
-    return res.status(500).json({ message: 'Erro ao obter as ferramentas.' });
+  }
+  catch (error) {
+    return res.status(500).json({ message: "Erro ao obter as ferramentas." });
   };
 };
 
