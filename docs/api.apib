@@ -1,0 +1,101 @@
+FORMAT: 1A
+HOST: http://localhost:3000
+
+# Very Useful Tools to Remember
+
+A API permite o gerenciamento de ferramentas populares de tecnologia.
+
+# Group Tools
+
+## NO PARAMETERS [/tools]
+
+### Listar Ferramentas [GET]
+Lista todas as ferramentas cadastradas.
+
++ Response 200 (application/json)
+    + Attributes (array)
+        + (Tool)
+        + (Tool2)
+        + (Tool3)
+
+## QUERRY PARAMETERS [/tools/?tag={tag1}]
+Lista todas as ferramentas que possuem a `tag` passada por parametro.
+
+### Filtrar Ferramentas por Tag [GET]
+
++ Parameters
+  + tag1 (string, required) - Tag a ser pesquisada
+
++ Response 200 (application/json)
+    + Attributes (array)
+        + (Tool)
+        + (Tool3)
+
+## PATH PARAMETERS [/tools/{id}]
+
++ Parameters
+    + id: 1 (int) - ID da Ferramenta
+
+### Cadastrar Nova Ferramenta [POST]
+Cadastra uma nova ferramenta
+
++ Request (application/json)
+    + Attributes (Tool4)
+
++ Response 201 (application/json)
+
+        {
+          "title": "Tool Title",
+          "link": "http://example.com",
+          "description": "Tool description",
+          "tag": "[tag1, tag2]",
+          "id": 1
+        }
+
+### Deletar Uma Ferramenta [DELETE]
+Deleta uma ferramenta que possui o `id` informado no path.
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+        {}
+
+### Atualizar Uma Ferramenta [PUT]
+Atualiza as informações de uma ferramenta que possui o `id` informado no path.
+
++ Request (application/json)
+    + Attributes (Tool4)
+
++ Response 200 (application/json)
+
+        {}
+
+## Data Structures
+
+### Tool (object)
+- id: `1` (string, required) - ID da ferramenta
+- title: `Tool Title` (string, required) - Título da ferramenta
+- link: `http://example.com` (string, required) - Link da ferramenta
+- description: `Tool description` (string, required) - Descrição da ferramenta
+- tags: `[tag1, tag2]` (array, required) - Tags associadas à ferramenta
+
+### Tool2 (object)
+- id: `2` (string, required) - ID da ferramenta
+- title: `Tool 2 Title` (string, required) - Título da ferramenta
+- link: `http://example2.com` (string, required) - Link da ferramenta
+- description: `Tool 2 description` (string, required) - Descrição da ferramenta
+- tags: `[tag3, tag4]` (array, required) - Tags associadas à ferramenta
+
+### Tool3 (object)
+- id: `3` (string, required) - ID da ferramenta
+- title: `Tool 3 Title` (string, required) - Título da ferramenta
+- link: `http://example3.com` (string, required) - Link da ferramenta
+- description: `Tool 3 description` (string, required) - Descrição da ferramenta
+- tags: `[tag4, tag1]` (array, required) - Tags associadas à ferramenta
+
+### Tool4 (object)
+- title: `Tool 4 Title` (string, required) - Título da ferramenta
+- link: `http://example4.com` (string, required) - Link da ferramenta
+- description: `Tool 4 description` (string, required) - Descrição da ferramenta
+- tags: `[tag3, tag6]` (array, required) - Tags associadas à ferramenta
