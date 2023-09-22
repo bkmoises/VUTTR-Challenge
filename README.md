@@ -10,6 +10,7 @@
     -   [Instalando as Dependências](#instalando-as-depend%C3%AAncias)
         -   [Utilizando npm](#utilizando-npm)
         -   [Utilizando yarn](#utilizando-yarn)
+    -   [Executando o Projeto](#Executando-o-Projeto)
     -   [Inicializando o Banco de Dados](#inicializando-o-banco-de-dados)
 -   [Licença](#licen%C3%A7a)
 
@@ -68,8 +69,6 @@ Para obter informações detalhadas sobre os métodos da API, bem como informaç
 
 Para executar este projeto em sua máquina local, siga os passos abaixo:
 
-A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
-
 ### Clonando o Repositório
 
 Primeiro, clone este repositório para o seu sistema local usando o seguinte comando:
@@ -95,6 +94,16 @@ yarn install
 ```
 
 Isso instalará todas as bibliotecas e módulos necessários para o projeto.
+
+### Executando o Projeto
+
+Agora que você configurou o projeto, pode executá-lo com o seguinte comando:
+
+```bash
+npm run prod
+```
+
+Isso irá compilar e iniciar o projeto em modo de produção. Em seguida, você pode acessar o projeto em seu navegador em [http://localhost:3000](http://localhost:3000).
 
 ### Inicializando o Banco de Dados
 
