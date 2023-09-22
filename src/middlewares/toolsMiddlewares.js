@@ -1,3 +1,9 @@
+/**
+ * Função de middleware para validar um campo específico no corpo da requisição.
+ *
+ * @param {string} fieldName - O nome do campo a ser validado.
+ * @returns {function} - Retorna uma função de middleware que executa a validação do campo especificado.
+ */
 const validateField = (fieldName) => (req, res, next) => {
   const { body } = req;
 
