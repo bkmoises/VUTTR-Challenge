@@ -111,5 +111,6 @@ Isso irá iniciar o MySQL em um contêiner separado, que pode ser acessado pelo 
 ## Licença
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE)
+
 Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](https://github.com/bkmoises/VUTTR-Challenge/blob/main/LICENSE) para obter mais detalhes.
 
